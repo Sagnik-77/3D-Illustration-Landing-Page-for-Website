@@ -1,0 +1,302 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;0,600;0,700;1,800&display=swap');
+
+:root{
+    --header-height:3rem;
+    --base-color:  #dfcfed; 
+    --first-color: #c1576a; 
+    --first-color-dark: #de949b;
+    --first-color-darker: #be5460;
+
+    --body-font: 'Poppins', sans-serif;;
+    --big-font-size: 2.5rem;
+    --normal-font-size: 0.98rem;
+    
+    --z-fixed: 100;
+}
+
+@media screen and (min-width: 768px)
+{
+    :root
+    {
+        --big-font-size: 3rem;
+        --normal-font-size: 1rem;
+    }
+}
+
+span
+    {
+        color: var(--first-color-darker);
+    }
+
+*,::before,::after
+{
+    box-sizing: border-box;
+}
+
+body
+{
+    margin: var(--header-height) 0 0 0;
+    padding: 0;
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    font-weight: 500;
+}
+
+h1,p,ul
+{
+    margin: 0;
+}
+
+ul{
+    padding: 0;
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+img
+{
+    max-width: 100%;
+    height: auto;
+}
+
+.bd-grid
+{
+    max-width: 1024px;
+    display: grid;
+    grid-template-columns: 100%;
+    column-gap: 2rem;
+    width: calc(100% - 2rem);
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.l-header
+{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: var(--z-fixed);
+    background-color: #d47581;
+}
+
+.nav
+{
+    height: var(--header-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+@media screen and (max-width: 768px)
+{
+    .nav_menu
+    {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100%;
+        padding: 3.5rem 1.5rem 0;
+        background-color: rgba(255,255,255,0.2);
+        backdrop-filter:  blur(10px);
+        transition: 0.5s;
+    }
+}
+
+.nav_close
+{
+    position: absolute;
+    top: 0.75rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.nav_item
+{
+    
+    margin-bottom: 2.5rem;
+}
+
+.nav_close,.nav_logo , .nav_toggle
+{
+    color: white;
+}
+.nav_link
+{
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+}
+.nav_link:hover
+{
+    color: var(--base-color);
+}
+
+.nav-toggle
+{
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.show
+{
+    right: 0;
+}
+
+.home
+{
+    background-image: linear-gradient(#d3727e,#de949b);
+    overflow: hidden;
+}
+
+.home_container
+{
+    height: calc(100vh - var(--header-height));
+    grid-template-rows: repeat(2,max-content);
+    row-gap: 1.5rem;
+}
+
+.home_img
+{
+    position: relative;
+    padding-top: 1.5rem;
+    justify-self: center;
+    width: 20rem;
+    height: 13rem;
+}
+
+.home_img img{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.home_data
+{
+    color: white;
+}
+
+.home_title
+{
+    font-size: var(--big-font-size);
+    line-height: 3rem;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+}
+
+.home_description
+{
+    margin-bottom: 1.6rem;
+}
+.home_button
+{
+    display: inline-block;
+    background-color: var(--first-color);
+    color: white;
+    padding: 1.125rem 1rem;
+    border-radius: 0.5rem;
+}
+
+.home_button:hover
+{
+    background-color: #c71838;
+}
+
+
+
+/*==============Media Queries=============*/
+
+@media screen and (min-width:768px)
+{
+    body
+    {
+        margin: 0;
+    }
+
+    .nav
+    {
+        height: calc(var(--header-height)+3rem);
+    }
+
+    .nav_toggle,.nav_close
+    {
+        display: none;
+    }
+
+    .nav_list
+    {
+        display: flex;
+    }
+    .nav_item
+    {
+        margin-left: 3rem;
+        margin-bottom: 0;
+    }
+    .home_container
+    {
+        height: 100vh;
+        grid-template-columns: repeat(2,max-content);
+        grid-template-rows: 1fr;
+        row-gap: 0;
+        align-items: center;
+        justify-content: center;
+    }
+    .home_img
+    {
+        order: 1;
+        width: 375px;
+        height: 290px;
+    }
+    .home_img img
+    {
+        width: 375px;
+    }
+}
+
+/*==============Media Queries=============*/
+
+@media screen and (min-width:1024px)
+{
+    
+    .home_title
+    {
+        font-size:4rem;
+        line-height: 5rem;
+    }
+    .bd-grid
+    {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    span
+    {
+        color: var(--first-color-darker);
+    }
+    .nav_toggle,.nav_close
+    {
+        display: none;
+    }
+    .home_container
+    {
+        justify-content: initial;
+        column-gap:10rem;
+    }
+
+    .home_img
+    {
+        width: 600px;
+        height: 466px;
+    }
+    .home_img img
+    {
+        
+        width: 600px;
+    }
+}
+
+
