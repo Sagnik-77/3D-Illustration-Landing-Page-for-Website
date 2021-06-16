@@ -3,4 +3,4 @@ In this project I have taken a coffee brand mock up to make a landing page for a
 
 
 Give it a look by yourself:
-(https://sagnik-77.github.io/3D-Illustration-Landing-Page-for-Website/)
+https://sagnik-77.github.io/3D-Illustration-Landing-Page-for-Website/
